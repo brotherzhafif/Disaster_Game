@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cwlj535hg5qu5"
-path="res://.godot/imported/pohon pinus .glb-8a01274f194b84d1e3b65100af6c60e2.scn"
+uid="uid://dmyc8eykyhwdu"
+path="res://.godot/imported/pohon pinus 4 .glb-a803edad7326954962b6b0784b784a29.scn"
 
 [deps]
 
-source_file="res://Tsunami Map/pohon pinus .glb"
-dest_files=["res://.godot/imported/pohon pinus .glb-8a01274f194b84d1e3b65100af6c60e2.scn"]
+source_file="res://Asset/pohon pinus 4 .glb"
+dest_files=["res://.godot/imported/pohon pinus 4 .glb-a803edad7326954962b6b0784b784a29.scn"]
 
 [params]
 
@@ -31,7 +31,7 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
 "meshes": {
-"pohon pinus _Cone_052": {
+"pohon pinus 4 _Pine_4": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
@@ -39,7 +39,7 @@ _subresources={
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
 "save_to_file/make_streamable": "",
-"save_to_file/path": "res://Tsunami Map/pohon pinus.res"
+"save_to_file/path": "res://Asset/pohon pinus 4.res"
 }
 }
 }
