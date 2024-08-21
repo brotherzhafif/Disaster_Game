@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://50h5c575gxbi"
-path="res://.godot/imported/sumur.glb-f239a8a06fe4358e9f50737927328f97.scn"
+path="res://.godot/imported/sumur.glb-079a7f8d32d60f5885aac2329cbf6b10.scn"
 
 [deps]
 
-source_file="res://asset/sumur.glb"
-dest_files=["res://.godot/imported/sumur.glb-f239a8a06fe4358e9f50737927328f97.scn"]
+source_file="res://asset/models/building/sumur.glb"
+dest_files=["res://.godot/imported/sumur.glb-079a7f8d32d60f5885aac2329cbf6b10.scn"]
 
 [params]
 
