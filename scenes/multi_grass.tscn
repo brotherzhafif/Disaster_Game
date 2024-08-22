@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cujopeusuh87"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7ji36"]
+size = Vector2(5, 5)
+
+[sub_resource type="MultiMesh" id="MultiMesh_l2esj"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="plane" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_7ji36")
+
+[node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="."]
+multimesh = SubResource("MultiMesh_l2esj")
