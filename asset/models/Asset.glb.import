@@ -3,8 +3,16 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
+<<<<<<< HEAD
+uid="uid://cyl3if2at3ra8"
+=======
 uid="uid://geqws5guj6vs"
+<<<<<<< HEAD:asset/models/Asset.glb.import
 path="res://.godot/imported/Asset.glb-1b78764a4053048f2e7bb259f477a343.scn"
+=======
+>>>>>>> 6cbac1fda7ed915dc99937a85f2c13729c3b8964
+path="res://.godot/imported/Asset.glb-302164134dafc2d31e37c05476015dbe.scn"
+>>>>>>> 2c84d8f6621aa082b42dd4be1518d3efd217d65c:asset/models/decorations/Asset.glb.import
 
 [deps]
 

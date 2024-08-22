@@ -1,10 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://btxobtyg1epfj"]
+[gd_scene load_steps=12 format=3 uid="uid://btxobtyg1epfj"]
 
-[ext_resource type="Texture2D" uid="uid://cucgybt6ybemg" path="res://asset/textures/grids/Orange/texture_01.png" id="1_u16dq"]
-[ext_resource type="Texture2D" uid="uid://dmxmgw3rh0ym2" path="res://asset/textures/grids/Purple/texture_01.png" id="2_xthma"]
-[ext_resource type="Texture2D" uid="uid://dko2pc0uq6pwf" path="res://asset/textures/grids/Green/texture_01.png" id="3_7g60d"]
-[ext_resource type="Texture2D" uid="uid://bdw2j5kejiegc" path="res://asset/textures/grids/Dark/texture_01.png" id="4_qnaof"]
+[ext_resource type="Texture2D" uid="uid://by4oh1x2tx8o6" path="res://asset/img/earth-texture.png" id="1_gd0yr"]
+[ext_resource type="PackedScene" uid="uid://7g2saryf6lki" path="res://scenes/grass_dekoration.tscn" id="3_et5ya"]
+[ext_resource type="ArrayMesh" uid="uid://bo4nr8vb6ihap" path="res://asset/models/decorations/pohon.res" id="3_suxco"]
+[ext_resource type="PackedScene" uid="uid://cefpk64wyq226" path="res://scenes/sumur_blend.tscn" id="4_1ojrw"]
 [ext_resource type="PackedScene" uid="uid://cf8nea7ant1gm" path="res://scenes/player.tscn" id="5_7bhrq"]
+[ext_resource type="ArrayMesh" uid="uid://i3ovpvgkxgu0" path="res://asset/models/decorations/PohonPinus4.res" id="7_36pf0"]
+[ext_resource type="PackedScene" uid="uid://ckhnttfmdwdd7" path="res://asset/models/decorations/PohonPinus1.glb" id="8_na0oe"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g6qy8"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -22,20 +24,8 @@ glow_enabled = true
 fog_enabled = true
 fog_density = 0.0005
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kivqm"]
-albedo_texture = ExtResource("1_u16dq")
-uv1_triplanar = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kdq7k"]
-albedo_texture = ExtResource("2_xthma")
-uv1_triplanar = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rvmip"]
-albedo_texture = ExtResource("3_7g60d")
-uv1_triplanar = true
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mjji7"]
-albedo_texture = ExtResource("4_qnaof")
+albedo_texture = ExtResource("1_gd0yr")
 uv1_triplanar = true
 
 [node name="world" type="Node3D"]
@@ -49,27 +39,36 @@ environment = SubResource("Environment_7qjvk")
 
 [node name="map" type="Node3D" parent="."]
 
-[node name="box" type="CSGBox3D" parent="map"]
-transform = Transform3D(0.838119, 0, 0.545488, 0, 1, 0, -0.545488, 0, 0.838119, 1.04489, 1, 4.44489)
-material_override = SubResource("StandardMaterial3D_kivqm")
-use_collision = true
-
-[node name="box2" type="CSGBox3D" parent="map"]
-transform = Transform3D(0.891466, 0, -0.453088, 0, 1, 0, 0.453088, 0, 0.891466, -5.32553, 1.52827, -1.54075)
-material_override = SubResource("StandardMaterial3D_kdq7k")
-use_collision = true
-size = Vector3(2, 2, 2)
-
-[node name="box3" type="CSGBox3D" parent="map"]
-transform = Transform3D(-0.604071, 0, -0.796931, 0, 1, 0, 0.796931, 0, -0.604071, 2.36512, 1.98923, -7.43872)
-material_override = SubResource("StandardMaterial3D_rvmip")
-use_collision = true
-size = Vector3(3, 3, 3)
-
 [node name="floor" type="CSGBox3D" parent="map"]
+transform = Transform3D(0.798505, 0, 0, 0, 1, 0, 0, 0, 0.820415, 4.71289, 0, 5.12073)
 material_override = SubResource("StandardMaterial3D_mjji7")
 use_collision = true
-size = Vector3(1000, 1, 1000)
+size = Vector3(50, 1, 50)
 
 [node name="player" parent="." instance=ExtResource("5_7bhrq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6008, 0)
+
+[node name="Lobby_Dekoration" type="Node3D" parent="."]
+
+[node name="Pohon" type="MeshInstance3D" parent="Lobby_Dekoration"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 11.5894, 0.238527, 5.85247)
+mesh = ExtResource("3_suxco")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lobby_Dekoration/Pohon"]
+
+[node name="sumur_blend" parent="Lobby_Dekoration" instance=ExtResource("4_1ojrw")]
+transform = Transform3D(-0.125293, 0, -0.168528, 0, 0.21, 0, 0.168528, 0, -0.125293, -1.31063, 2.44182, 1.52505)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lobby_Dekoration/sumur_blend"]
+
+[node name="PohonPinus4" type="MeshInstance3D" parent="Lobby_Dekoration"]
+transform = Transform3D(0.735, 0, 0, 0, -3.21279e-08, -0.735, 0, 0.735, -3.21279e-08, 4.21567, 0.5, -1.18711)
+mesh = ExtResource("7_36pf0")
+skeleton = NodePath("../..")
+
+[node name="PohonPinus1" parent="Lobby_Dekoration" instance=ExtResource("8_na0oe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.82404, 0.5, 24.8972)
+
+[node name="grass" parent="Lobby_Dekoration" instance=ExtResource("3_et5ya")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.19324, 0.611201, 4.99151)

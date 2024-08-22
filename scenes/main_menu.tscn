@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=3 uid="uid://ujj4nk3tkjm"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_b57s2"]
+[ext_resource type="Texture2D" uid="uid://bmhdf3k3ssg52" path="res://asset/img/main_Menu.jpg" id="2_m252e"]
+[ext_resource type="FontFile" uid="uid://m7gtob8sjwlv" path="res://asset/font/04B_30__.TTF" id="3_flsee"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8frb8"]
+texture = ExtResource("2_m252e")
+modulate_color = Color(0.354063, 0.354063, 0.354063, 1)
+
+[node name="Main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b57s2")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_8frb8")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 94.0
+offset_top = 45.5
+offset_right = 190.0
+offset_bottom = 146.5
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Start Game"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Credit"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Exit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -502.0
+offset_top = 84.0
+offset_right = -142.0
+offset_bottom = 168.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_flsee")
+theme_override_font_sizes/font_size = 45
+text = "DISASTERS
+"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -502.0
+offset_top = 141.0
+offset_right = -74.0
+offset_bottom = 225.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_flsee")
+theme_override_font_sizes/font_size = 50
+text = "SIMULATION
+"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_credit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_exit_pressed"]
