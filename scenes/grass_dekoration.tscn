@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://7g2saryf6lki"]
+[gd_scene load_steps=6 format=3 uid="uid://bxecuqfbsano7"]
 
 [ext_resource type="Material" uid="uid://do05ajv5yq5b3" path="res://asset/Colors/colorTry.tres" id="1_x3qux"]
-[ext_resource type="ArrayMesh" uid="uid://cp236r46ot4ic" path="res://asset/models/decorations/grassVersiLowBudget.res" id="2_kjh8n"]
+[ext_resource type="ArrayMesh" uid="uid://bt6vht5j4ytx8" path="res://asset/models/decorations/grassVersiLowBudget.res" id="2_kjh8n"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_qfhau"]
 size = Vector2(40, 40)
