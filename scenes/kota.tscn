@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://xguaywfqlvfe"]
+
+[ext_resource type="PackedScene" uid="uid://d38sax7wmr5tg" path="res://asset/models/maps/Kota.glb" id="1_3tq3r"]
+
+[node name="Kota" instance=ExtResource("1_3tq3r")]

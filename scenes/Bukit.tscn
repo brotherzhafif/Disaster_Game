@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://chnbt23f826lj"]
+
+[ext_resource type="PackedScene" uid="uid://cfda6q4u17mpq" path="res://asset/models/maps/Bukit.glb" id="1_dh35g"]
+
+[node name="Bukit" instance=ExtResource("1_dh35g")]
+
+[node name="CollisionShape3D" parent="Bukit/Bukit" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.84217e-14, 0, 2.84217e-14, 1, 0, 0, 0)
