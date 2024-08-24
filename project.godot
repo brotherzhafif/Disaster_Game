@@ -72,7 +72,11 @@ m_terrain/keymap/mpath_lock_z=Object(InputEventKey,"resource_local_to_scene":fal
 [application]
 
 config/name="Disaster Game"
+<<<<<<< HEAD
 run/main_scene="res://scenes/Forest/Forest.tscn"
+=======
+run/main_scene="res://scenes/main_menu.tscn"
+>>>>>>> 4c02366fff70e4ab7406cb60d2c2e66a1e7eec42
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
