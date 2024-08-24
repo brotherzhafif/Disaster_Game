@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://6vs0oqfgbvee"]
+
+[ext_resource type="Shader" path="res://scenes/beach/water.gdshader" id="1_er7pn"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_yio15"]
+size = Vector2(1000, 1000)
+subdivide_width = 200
+subdivide_depth = 200
+orientation = 1
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_icjqs"]
+noise_type = 3
+offset = Vector3(20.15, 0, 0)
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_pgyc2"]
+generate_mipmaps = false
+seamless = true
+seamless_blend_skirt = 0.0
+as_normal_map = true
+bump_strength = 10.2
+noise = SubResource("FastNoiseLite_icjqs")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6i084"]
+render_priority = 0
+shader = ExtResource("1_er7pn")
+shader_parameter/albedo = Color(7.70092e-07, 0.265612, 0.613824, 1)
+shader_parameter/metallic = 0.615
+shader_parameter/roughness = 0.0
+shader_parameter/wave_direction = Vector2(2, 0)
+shader_parameter/wave_direction2 = Vector2(0, 0.1)
+shader_parameter/time_scale = 0.025
+shader_parameter/texture_normal = SubResource("NoiseTexture2D_pgyc2")
+shader_parameter/texture_normal2 = SubResource("NoiseTexture2D_pgyc2")
+
+[node name="water_for_beach" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076755, 0.137617, -0.0658917)
+mesh = SubResource("QuadMesh_yio15")
+surface_material_override/0 = SubResource("ShaderMaterial_6i084")

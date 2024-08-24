@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://blqdv3o5dbhgs"]
+
+[ext_resource type="Material" uid="uid://20liuco73hno" path="res://asset/Colors/colorLobbyDirt.tres" id="1_tpmp3"]
+[ext_resource type="PackedScene" uid="uid://cb1iwxp77nqof" path="res://scenes/characters.tscn" id="2_qkxpa"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_kaaoc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2bysh"]
+
+[node name="Main_Lobby" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0)
+material_override = ExtResource("1_tpmp3")
+mesh = SubResource("BoxMesh_kaaoc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D"]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0)
+shape = SubResource("BoxShape3D_2bysh")
+
+[node name="Characters" parent="." instance=ExtResource("2_qkxpa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.251516, 3.98653, 6.01371)

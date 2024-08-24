@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://20liuco73hno"]
+
+[ext_resource type="Texture2D" uid="uid://by4oh1x2tx8o6" path="res://asset/img/earth-texture.png" id="1_8w6fc"]
+
+[resource]
+albedo_texture = ExtResource("1_8w6fc")
+uv1_scale = Vector3(6.165, 6.165, 6.165)
