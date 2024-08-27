@@ -1,79 +1,59 @@
+
 extends CharacterBody3D
 
-@onready var camera_mount := $camera_mount
-@onready var animation_player := $visuals/mixamo_base/AnimationPlayer
-@onready var visuals := $visuals
-
-var SPEED := 2.25
-var JUMP_VELOCITY := 4.5
-var walking_speed := 2.25
-var running_speed := 5.0
-var is_locked := false
-var status : String
-
-@export var sens_horizontal = 0.5
-@export var sens_vertical = 0.25
+var ORIGINAL_SPEED
+var SPEED = 3.0
+var sprint_draint_amount = 0.3
+var sprint_refresh_amount = 0.4
+var SPRINT_SPEED = 7.0
+const JUMP_VELOCITY = 4.5
+var sprint_slider
+var movable = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready():
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	
-# Get Mouse Movement to an Input Value
-func _input(event):
-	if event is InputEventMouseMotion:
-		rotate_y(deg_to_rad(-event.relative.x * sens_horizontal))
-		visuals.rotate_y(deg_to_rad(event.relative.x * sens_horizontal))
-		$camera_mount.rotate_x(deg_to_rad(event.relative.y * sens_vertical))
-	
+	ORIGINAL_SPEED = SPEED
+	sprint_slider = get_node("/root/" + get_tree().current_scene.name + "/UI/sprint_slider")
+
+func _process(delta):
+	if SPEED == SPRINT_SPEED:
+		sprint_slider.value = sprint_slider.value - sprint_draint_amount * delta
+		if sprint_slider.value == sprint_slider.min_value:
+			SPEED = ORIGINAL_SPEED
+	if SPEED != SPRINT_SPEED:
+		if sprint_slider.value < sprint_slider.max_value:
+			sprint_slider.value = sprint_slider.value + sprint_refresh_amount * delta
+		if sprint_slider.value == sprint_slider.max_value:
+			sprint_slider.visible = false
+
 func _physics_process(delta):
-	# Exit
-	if Input.is_action_just_pressed("exit"):
-		get_tree().quit()
-	
-	if !animation_player.is_playing():
-		is_locked = false
-		
-	# Kicking
-	if Input.is_action_just_pressed("kick"):
-		status = "kick"
-		is_locked = true
-		
-	# running
-	if !is_locked:
-		if !Input.is_anything_pressed():
-			status = "idle"
-		else:
-			if Input.is_action_pressed("run"):
-				status = "running"
-				SPEED = running_speed
-			else:
-				status = "walking"
-				SPEED = walking_speed
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
+
+	if movable == true :
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-	# Get the input direction and handle the movement/deceleration.
+		if Input.is_action_just_pressed("jump") and is_on_floor():
+				velocity.y = JUMP_VELOCITY
+
+
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir = Input.get_vector("left", "right", "forward", "backward")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	
-	if animation_player.current_animation != status:
-			animation_player.play(status)
+		var input_dir = Input.get_vector("left", "right", "forward", "backward")
+		var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+		if direction:
+			velocity.x = direction.x * SPEED
+			velocity.z = direction.z * SPEED
 			
-	if direction:
-		if !is_locked:
-			visuals.look_at(position + direction)
-		
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
-	if !is_locked:
-		move_and_slide()
-		
+			if Input.is_action_just_pressed("Sprint"):
+				sprint_slider.visible = true
+				SPEED = SPRINT_SPEED
+			if Input.is_action_just_released("Sprint") :
+				SPEED = ORIGINAL_SPEED
+				
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+			velocity.z = move_toward(velocity.z, 0, SPEED)
+
+	move_and_slide()
