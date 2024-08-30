@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b7hxccjiokijn"
+path="res://.godot/imported/scary-siren-air-raid-tornado-nuke-7010.mp3-90eee17821fb5ee9462e732b9b1fda8b.mp3str"
+
+[deps]
+
+source_file="res://Sound Effect/scary-siren-air-raid-tornado-nuke-7010.mp3"
+dest_files=["res://.godot/imported/scary-siren-air-raid-tornado-nuke-7010.mp3-90eee17821fb5ee9462e732b9b1fda8b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

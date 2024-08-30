@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://xguaywfqlvfe"]
-
-[ext_resource type="PackedScene" uid="uid://d38sax7wmr5tg" path="res://asset/models/maps/Kota.glb" id="1_3tq3r"]
-[ext_resource type="PackedScene" uid="uid://cb1iwxp77nqof" path="res://scenes/characters.tscn" id="2_6wjqs"]
-
-[node name="Kota" instance=ExtResource("1_3tq3r")]
-
-[node name="Characters" parent="." index="2" instance=ExtResource("2_6wjqs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.4026, 78.0722, 58.4799)

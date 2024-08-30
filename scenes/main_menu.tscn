@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqnswg872gsb3"]
+[gd_scene load_steps=6 format=3 uid="uid://cqnswg872gsb3"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_b57s2"]
 [ext_resource type="Texture2D" uid="uid://bmhdf3k3ssg52" path="res://asset/img/main_Menu.jpg" id="2_m252e"]
 [ext_resource type="FontFile" uid="uid://m7gtob8sjwlv" path="res://asset/font/04B_30__.TTF" id="3_flsee"]
+[ext_resource type="AudioStream" uid="uid://b7xalf8yx4uv2" path="res://Sound Effect/wing-of-faith-183303.mp3" id="4_6qeuc"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8frb8"]
 texture = ExtResource("2_m252e")
@@ -80,6 +81,10 @@ theme_override_fonts/font = ExtResource("3_flsee")
 theme_override_font_sizes/font_size = 50
 text = "SIMULATION
 "
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_6qeuc")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_credit_pressed"]

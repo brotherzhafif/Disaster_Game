@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://debjlg4q7cey4"
+path="res://.godot/imported/the-end-of-the-world-25685.mp3-67427725bacfc2084a084e56eb9783a2.mp3str"
+
+[deps]
+
+source_file="res://Sound Effect/the-end-of-the-world-25685.mp3"
+dest_files=["res://.godot/imported/the-end-of-the-world-25685.mp3-67427725bacfc2084a084e56eb9783a2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

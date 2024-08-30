@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cybwn5dnfl0hw"
+path="res://.godot/imported/The Last Battle.mp3-cde8b72b4d1d6f76e9f4aadcbf91c101.mp3str"
+
+[deps]
+
+source_file="res://asset/Sound Effect/Backsound/The Last Battle.mp3"
+dest_files=["res://.godot/imported/The Last Battle.mp3-cde8b72b4d1d6f76e9f4aadcbf91c101.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

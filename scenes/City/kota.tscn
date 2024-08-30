@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://xguaywfqlvfe"]
+
+[ext_resource type="PackedScene" uid="uid://d38sax7wmr5tg" path="res://asset/models/maps/Kota.glb" id="1_3tq3r"]
+[ext_resource type="PackedScene" uid="uid://c8uhe3kh5ph5g" path="res://scenes/fix_characters.tscn" id="2_euy6w"]
+[ext_resource type="AudioStream" uid="uid://b7hxccjiokijn" path="res://Sound Effect/scary-siren-air-raid-tornado-nuke-7010.mp3" id="3_cjdgs"]
+
+[node name="Kota" instance=ExtResource("1_3tq3r")]
+
+[node name="Fix_characters" parent="." index="2" instance=ExtResource("2_euy6w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.337297, 0)
+
+[node name="Sound Effect" type="Node3D" parent="." index="3"]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Sound Effect" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.1224, 0, 0)
+stream = ExtResource("3_cjdgs")
+autoplay = true
+max_distance = 50.0
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="Sound Effect" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.943221, -0.96175, -1.27234)
+stream = ExtResource("3_cjdgs")
+autoplay = true
+max_distance = 50.0
+
+[node name="AudioStreamPlayer3D5" type="AudioStreamPlayer3D" parent="Sound Effect" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.5282, -0.961746, -1.35645)
+stream = ExtResource("3_cjdgs")
+autoplay = true
+max_distance = 50.0
+
+[node name="AudioStreamPlayer3D4" type="AudioStreamPlayer3D" parent="Sound Effect" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.943221, -0.96175, 40.5879)
+stream = ExtResource("3_cjdgs")
+autoplay = true
+max_distance = 50.0
+
+[node name="AudioStreamPlayer3D3" type="AudioStreamPlayer3D" parent="Sound Effect" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.943221, -0.96175, -44.2975)
+stream = ExtResource("3_cjdgs")
+autoplay = true
+max_distance = 50.0

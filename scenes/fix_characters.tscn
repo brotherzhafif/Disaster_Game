@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8uhe3kh5ph5g"]
+
+[ext_resource type="Script" path="res://Scripts/fix_characters_PauseMenu.gd" id="1_1oqvr"]
+[ext_resource type="PackedScene" uid="uid://cb1iwxp77nqof" path="res://scenes/Try_characters.tscn" id="2_k5gbq"]
+[ext_resource type="PackedScene" uid="uid://cp6fpb7yrntmg" path="res://scenes/Forest/PauseMenu_Forest.tscn" id="3_par86"]
+[ext_resource type="AudioStream" uid="uid://bu6mq35ijg4g" path="res://Sound Effect/natural-sampling-59215.mp3" id="4_q32r5"]
+
+[node name="Fix_characters" type="Node3D"]
+script = ExtResource("1_1oqvr")
+
+[node name="Characters" parent="." instance=ExtResource("2_k5gbq")]
+
+[node name="Sound Effect" type="Node3D" parent="Characters"]
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="Characters/Sound Effect"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.943221, -0.96175, -1.27234)
+stream = ExtResource("4_q32r5")
+autoplay = true
+max_distance = 50.0
+
+[node name="PauseMenu_Forest" parent="." instance=ExtResource("3_par86")]
+visible = false

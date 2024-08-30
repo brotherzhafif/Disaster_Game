@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://blqdv3o5dbhgs"]
+[gd_scene load_steps=5 format=3 uid="uid://bptictxj2i1ou"]
 
 [ext_resource type="Material" uid="uid://20liuco73hno" path="res://asset/Colors/colorLobbyDirt.tres" id="1_tpmp3"]
-[ext_resource type="PackedScene" uid="uid://cb1iwxp77nqof" path="res://scenes/characters.tscn" id="2_qkxpa"]
+[ext_resource type="PackedScene" uid="uid://cb1iwxp77nqof" path="res://scenes/Try_characters.tscn" id="2_qkxpa"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_kaaoc"]
 

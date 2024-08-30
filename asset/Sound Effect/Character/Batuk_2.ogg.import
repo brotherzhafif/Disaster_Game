@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://br00aui5m1es4"
+path="res://.godot/imported/Batuk_2.ogg-ac0e8fbb2875cd2011b89cf875cbc6a8.oggvorbisstr"
+
+[deps]
+
+source_file="res://asset/Sound Effect/Character/Batuk_2.ogg"
+dest_files=["res://.godot/imported/Batuk_2.ogg-ac0e8fbb2875cd2011b89cf875cbc6a8.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

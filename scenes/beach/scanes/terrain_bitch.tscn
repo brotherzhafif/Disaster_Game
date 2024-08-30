@@ -1,7 +1,6 @@
-[gd_scene load_steps=32 format=3 uid="uid://cujblkrvrif77"]
+[gd_scene load_steps=33 format=3 uid="uid://cujblkrvrif77"]
 
 [ext_resource type="PackedScene" uid="uid://ck1exncbpw8fg" path="res://scenes/beach/metrial/terrain_bitch.glb" id="1_vlsq8"]
-[ext_resource type="PackedScene" uid="uid://cb1iwxp77nqof" path="res://scenes/characters.tscn" id="2_lc7uk"]
 [ext_resource type="Texture2D" uid="uid://upx1xvrix683" path="res://scenes/Forest/Material/farm_field_puresky_2k.hdr" id="3_ls4r2"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/scatter.gd" id="4_dxvd5"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="5_ysghk"]
@@ -12,7 +11,9 @@
 [ext_resource type="Script" path="res://addons/proton_scatter/src/scatter_item.gd" id="10_4d7y7"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/scatter_shape.gd" id="11_m2fys"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/shapes/box_shape.gd" id="12_u8aqd"]
+[ext_resource type="PackedScene" uid="uid://c8uhe3kh5ph5g" path="res://scenes/fix_characters.tscn" id="13_1hjd5"]
 [ext_resource type="PackedScene" uid="uid://xhsrdb700uow" path="res://scenes/Forest/river.tscn" id="13_4xlhg"]
+[ext_resource type="AudioStream" uid="uid://debjlg4q7cey4" path="res://Sound Effect/the-end-of-the-world-25685.mp3" id="14_me4ec"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ekkge"]
 panorama = ExtResource("3_ls4r2")
@@ -27,7 +28,7 @@ sky = SubResource("Sky_fkvty")
 ambient_light_sky_contribution = 0.5
 ambient_light_energy = 0.3
 
-[sub_resource type="Resource" id="Resource_gf1wj"]
+[sub_resource type="Resource" id="Resource_33167"]
 script = ExtResource("6_jp76b")
 amount = 1000
 enabled = true
@@ -36,7 +37,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_mxo8a"]
+[sub_resource type="Resource" id="Resource_uqr12"]
 script = ExtResource("7_eq4cw")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(20, 360, 20)
@@ -47,7 +48,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_wlatv"]
+[sub_resource type="Resource" id="Resource_pdfqt"]
 script = ExtResource("8_heh5i")
 iterations = 3
 offset_step = 0.2
@@ -59,7 +60,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_wlxf3"]
+[sub_resource type="Resource" id="Resource_6orhg"]
 script = ExtResource("9_5gydk")
 ray_direction = Vector3(0, -1, 0)
 ray_length = 5.0
@@ -75,9 +76,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_dbtop"]
+[sub_resource type="Resource" id="Resource_hmyyd"]
 script = ExtResource("5_ysghk")
-stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_gf1wj"), SubResource("Resource_mxo8a"), SubResource("Resource_wlatv"), SubResource("Resource_wlxf3")])
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_33167"), SubResource("Resource_uqr12"), SubResource("Resource_pdfqt"), SubResource("Resource_6orhg")])
 
 [sub_resource type="Resource" id="Resource_dbwml"]
 script = ExtResource("12_u8aqd")
@@ -91,7 +92,7 @@ size = Vector3(1, 1, 1)
 script = ExtResource("12_u8aqd")
 size = Vector3(1, 1, 1)
 
-[sub_resource type="Resource" id="Resource_djqd6"]
+[sub_resource type="Resource" id="Resource_qpt1s"]
 script = ExtResource("6_jp76b")
 amount = 75
 enabled = true
@@ -100,7 +101,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_oxyfw"]
+[sub_resource type="Resource" id="Resource_oe4j1"]
 script = ExtResource("7_eq4cw")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(20, 360, 20)
@@ -111,7 +112,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_6bu4o"]
+[sub_resource type="Resource" id="Resource_kwe4c"]
 script = ExtResource("8_heh5i")
 iterations = 3
 offset_step = 0.2
@@ -123,7 +124,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_cj8k3"]
+[sub_resource type="Resource" id="Resource_i4xdn"]
 script = ExtResource("9_5gydk")
 ray_direction = Vector3(0, -1, 0)
 ray_length = 5.0
@@ -139,9 +140,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_1da0m"]
+[sub_resource type="Resource" id="Resource_ktcy4"]
 script = ExtResource("5_ysghk")
-stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_djqd6"), SubResource("Resource_oxyfw"), SubResource("Resource_6bu4o"), SubResource("Resource_cj8k3")])
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_qpt1s"), SubResource("Resource_oe4j1"), SubResource("Resource_kwe4c"), SubResource("Resource_i4xdn")])
 
 [sub_resource type="Resource" id="Resource_fk050"]
 script = ExtResource("12_u8aqd")
@@ -168,7 +169,7 @@ environment = SubResource("Environment_rkls2")
 [node name="ProtonScatter" type="Node3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.8035, -1.79541, 0)
 script = ExtResource("4_dxvd5")
-modifier_stack = SubResource("Resource_dbtop")
+modifier_stack = SubResource("Resource_hmyyd")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 
@@ -221,7 +222,7 @@ shape = SubResource("Resource_708id")
 [node name="ProtonScatter2" type="Node3D" parent="." index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.63083, 0)
 script = ExtResource("4_dxvd5")
-modifier_stack = SubResource("Resource_1da0m")
+modifier_stack = SubResource("Resource_ktcy4")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 
@@ -240,8 +241,40 @@ script = ExtResource("11_m2fys")
 negative = true
 shape = SubResource("Resource_pki8b")
 
-[node name="Characters" parent="." index="4" instance=ExtResource("2_lc7uk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.618598, 8.52664, -6.99799)
-
-[node name="river" parent="." index="5" instance=ExtResource("13_4xlhg")]
+[node name="river" parent="." index="4" instance=ExtResource("13_4xlhg")]
 transform = Transform3D(150, 0, 0, 0, 1, 0, 0, 0, 150, -5.72327, -5.69258, 26.6085)
+
+[node name="Fix_characters" parent="." index="5" instance=ExtResource("13_1hjd5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.0408, 0)
+
+[node name="Sound Effect" type="Node3D" parent="." index="6"]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Sound Effect" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.1224, 0, 0)
+stream = ExtResource("14_me4ec")
+autoplay = true
+max_distance = 50.0
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="Sound Effect" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.943221, -0.96175, -1.27234)
+stream = ExtResource("14_me4ec")
+autoplay = true
+max_distance = 50.0
+
+[node name="AudioStreamPlayer3D5" type="AudioStreamPlayer3D" parent="Sound Effect" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.5282, -0.961746, -1.35645)
+stream = ExtResource("14_me4ec")
+autoplay = true
+max_distance = 50.0
+
+[node name="AudioStreamPlayer3D4" type="AudioStreamPlayer3D" parent="Sound Effect" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.943221, -0.96175, 40.5879)
+stream = ExtResource("14_me4ec")
+autoplay = true
+max_distance = 50.0
+
+[node name="AudioStreamPlayer3D3" type="AudioStreamPlayer3D" parent="Sound Effect" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.943221, -0.96175, -44.2975)
+stream = ExtResource("14_me4ec")
+autoplay = true
+max_distance = 50.0
