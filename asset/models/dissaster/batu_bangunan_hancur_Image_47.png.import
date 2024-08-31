@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4k02teioajgh"
-path.s3tc="res://.godot/imported/terrain_bitch_Image_1.png-7177e3b72430a3612f7f58c80f7951bc.s3tc.ctex"
+uid="uid://smhd64iynl41"
+path.s3tc="res://.godot/imported/batu_bangunan_hancur_Image_47.png-52243346f0fc54d60b58c4e48ac1e84d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "a71d004c689607376feeaee79aa84308"
+"md5": "03e58a6f2ed868b0cc80dd6c92df9fae"
 }
 
 [deps]
 
-source_file="res://scenes/Beach/metrial/terrain_bitch_Image_1.png"
-dest_files=["res://.godot/imported/terrain_bitch_Image_1.png-7177e3b72430a3612f7f58c80f7951bc.s3tc.ctex"]
+source_file="res://asset/models/dissaster/batu_bangunan_hancur_Image_47.png"
+dest_files=["res://.godot/imported/batu_bangunan_hancur_Image_47.png-52243346f0fc54d60b58c4e48ac1e84d.s3tc.ctex"]
 
 [params]
 
@@ -23,12 +23,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=1
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
-roughness/src_normal="res://scenes/beach/metrial/terrain_bitch_Image_1.png"
+roughness/mode=0
+roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

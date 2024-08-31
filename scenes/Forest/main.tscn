@@ -32,7 +32,7 @@ sky = SubResource("Sky_fmyih")
 ambient_light_sky_contribution = 0.5
 ambient_light_energy = 0.3
 
-[sub_resource type="Resource" id="Resource_38p20"]
+[sub_resource type="Resource" id="Resource_okjgy"]
 script = ExtResource("5_sn2ft")
 amount = 5000
 enabled = true
@@ -41,7 +41,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_ix6gv"]
+[sub_resource type="Resource" id="Resource_xsya2"]
 script = ExtResource("6_2ajgw")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(5, 50, 5)
@@ -52,7 +52,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_s2me7"]
+[sub_resource type="Resource" id="Resource_mc6lx"]
 script = ExtResource("7_mvsr3")
 iterations = 3
 offset_step = 0.2
@@ -64,7 +64,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_hy1js"]
+[sub_resource type="Resource" id="Resource_3xef2"]
 script = ExtResource("8_5o828")
 ray_direction = Vector3(0, -1, 0)
 ray_length = 5.0
@@ -80,9 +80,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_iudyj"]
+[sub_resource type="Resource" id="Resource_l4yif"]
 script = ExtResource("4_c2q18")
-stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_38p20"), SubResource("Resource_ix6gv"), SubResource("Resource_s2me7"), SubResource("Resource_hy1js")])
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_okjgy"), SubResource("Resource_xsya2"), SubResource("Resource_mc6lx"), SubResource("Resource_3xef2")])
 
 [sub_resource type="Resource" id="Resource_sfagw"]
 script = ExtResource("12_wglmp")
@@ -160,7 +160,7 @@ size = Vector3(15, 1, 1.65527)
 [node name="ProtonScatter" type="Node3D" parent="Forest_Atribute"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.18909, 0)
 script = ExtResource("3_7ah5r")
-modifier_stack = SubResource("Resource_iudyj")
+modifier_stack = SubResource("Resource_l4yif")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 

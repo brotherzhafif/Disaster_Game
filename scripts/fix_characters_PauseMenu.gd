@@ -3,8 +3,6 @@ extends Node3D
 
 
 @onready var pauseMenu_forest = $PauseMenu_Forest
-
-
 var paused = false
 
 func _process(delta):

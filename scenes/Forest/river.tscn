@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://xhsrdb700uow"]
+[gd_scene load_steps=8 format=3 uid="uid://xhsrdb700uow"]
+
+[ext_resource type="Script" path="res://scripts/river.gd" id="1_a0533"]
 
 [sub_resource type="Shader" id="Shader_5y1wl"]
 code = "// NOTE: Shader automatically converted from Godot Engine 4.2.2.stable's StandardMaterial3D.
@@ -68,7 +70,7 @@ void fragment() {
 	NORMAL_MAP = triplanar_texture(texture_normal,uv1_power_normal,uv1_triplanar_pos).rgb;
 	NORMAL_MAP_DEPTH = normal_scale;
 	vec3 unpacked_normal = NORMAL_MAP;
-	unpacked_normal.xy = unpacked_normal.xy * 2.0 - 1.0;
+	unpacked_normal.xy = unpacked_normal.xy;
 	unpacked_normal.z = sqrt(max(0.0, 1.0 - dot(unpacked_normal.xy, unpacked_normal.xy)));
 	vec3 ref_normal = normalize( mix(NORMAL,TANGENT * unpacked_normal.x + BINORMAL * unpacked_normal.y + NORMAL * unpacked_normal.z,NORMAL_MAP_DEPTH) );
 	vec2 ref_ofs = SCREEN_UV - ref_normal.xy * dot(triplanar_texture(texture_refraction,uv1_power_normal,uv1_triplanar_pos),refraction_texture_channel) * refraction;
@@ -79,14 +81,14 @@ void fragment() {
 }
 "
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_hpeu4"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_8a0kj"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_eh4dr"]
 seamless = true
 as_normal_map = true
-noise = SubResource("FastNoiseLite_hpeu4")
+noise = SubResource("FastNoiseLite_8a0kj")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_v6oep"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1w6wg"]
 render_priority = 0
 shader = SubResource("Shader_5y1wl")
 shader_parameter/albedo = Color(0, 0.407843, 0.596078, 0.572549)
@@ -107,11 +109,24 @@ shader_parameter/texture_refraction = SubResource("NoiseTexture2D_eh4dr")
 shader_parameter/texture_normal = SubResource("NoiseTexture2D_eh4dr")
 
 [sub_resource type="BoxMesh" id="BoxMesh_vd2ka"]
-material = SubResource("ShaderMaterial_v6oep")
-size = Vector3(10, 1, 10)
+material = SubResource("ShaderMaterial_1w6wg")
+size = Vector3(350, 1, 350)
 
-[node name="river" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_a0nqj"]
+size = Vector3(350, 1, 350)
+
+[node name="Area3D" type="Area3D"]
+script = ExtResource("1_a0533")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.228585, 0.459691, 0.0904877)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.68385, -0.631376, 0.461527)
 mesh = SubResource("BoxMesh_vd2ka")
+
+[node name="water2" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_a0nqj")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

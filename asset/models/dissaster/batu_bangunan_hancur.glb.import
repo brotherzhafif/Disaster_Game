@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ck1exncbpw8fg"
-path="res://.godot/imported/terrain_bitch.glb-f9f619ab898a95a38a606e6a3d026137.scn"
+uid="uid://0qhm172q1cfl"
+path="res://.godot/imported/batu_bangunan_hancur.glb-a129edc2574281664b0b3bc0818bdc61.scn"
 
 [deps]
 
-source_file="res://scenes/Beach/metrial/terrain_bitch.glb"
-dest_files=["res://.godot/imported/terrain_bitch.glb-f9f619ab898a95a38a606e6a3d026137.scn"]
+source_file="res://asset/models/dissaster/batu_bangunan_hancur.glb"
+dest_files=["res://.godot/imported/batu_bangunan_hancur.glb-a129edc2574281664b0b3bc0818bdc61.scn"]
 
 [params]
 

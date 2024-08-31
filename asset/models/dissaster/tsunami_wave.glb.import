@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ck1exncbpw8fg"
-path="res://.godot/imported/terrain_bitch.glb-f9f619ab898a95a38a606e6a3d026137.scn"
+uid="uid://biydm3ihtmh25"
+path="res://.godot/imported/tsunami_wave.glb-4e9b94c184c147f1dbfb8529a0222df8.scn"
 
 [deps]
 
-source_file="res://scenes/Beach/metrial/terrain_bitch.glb"
-dest_files=["res://.godot/imported/terrain_bitch.glb-f9f619ab898a95a38a606e6a3d026137.scn"]
+source_file="res://asset/models/dissaster/tsunami_wave.glb"
+dest_files=["res://.godot/imported/tsunami_wave.glb-4e9b94c184c147f1dbfb8529a0222df8.scn"]
 
 [params]
 

@@ -1,22 +1,91 @@
-[gd_scene load_steps=5 format=3 uid="uid://bptictxj2i1ou"]
+[gd_scene load_steps=8 format=3 uid="uid://bptictxj2i1ou"]
 
+[ext_resource type="Script" path="res://scripts/gacha_bencana.gd" id="1_aaaqn"]
 [ext_resource type="Material" uid="uid://20liuco73hno" path="res://asset/Colors/colorLobbyDirt.tres" id="1_tpmp3"]
-[ext_resource type="PackedScene" uid="uid://cb1iwxp77nqof" path="res://scenes/Try_characters.tscn" id="2_qkxpa"]
+[ext_resource type="FontFile" uid="uid://m7gtob8sjwlv" path="res://asset/font/04B_30__.TTF" id="4_fqvsl"]
+[ext_resource type="PackedScene" uid="uid://c8uhe3kh5ph5g" path="res://scenes/fix_characters.tscn" id="4_m1qdy"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_kaaoc"]
+[sub_resource type="BoxMesh" id="BoxMesh_5gtx1"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_2bysh"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_7eh14"]
+size = Vector3(100, 1, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jrxkw"]
+size = Vector3(1, 50, 100)
 
 [node name="Main_Lobby" type="Node3D"]
+script = ExtResource("1_aaaqn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0)
 material_override = ExtResource("1_tpmp3")
-mesh = SubResource("BoxMesh_kaaoc")
+mesh = SubResource("BoxMesh_5gtx1")
+skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D"]
-transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0)
-shape = SubResource("BoxShape3D_2bysh")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_7eh14")
 
-[node name="Characters" parent="." instance=ExtResource("2_qkxpa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.251516, 3.98653, 6.01371)
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 23.914, 0)
+shape = SubResource("BoxShape3D_jrxkw")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 23.914, 0)
+shape = SubResource("BoxShape3D_jrxkw")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 23.914, 48)
+shape = SubResource("BoxShape3D_jrxkw")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 23.914, -48)
+shape = SubResource("BoxShape3D_jrxkw")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="city" type="Label" parent="CanvasLayer"]
+clip_contents = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -346.0
+offset_top = -32.5
+offset_right = 346.0
+offset_bottom = 32.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_fqvsl")
+theme_override_font_sizes/font_size = 52
+text = "Test"
+horizontal_alignment = 1
+clip_text = true
+
+[node name="judul" type="Label" parent="CanvasLayer"]
+clip_contents = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -419.5
+offset_top = -113.0
+offset_right = 419.5
+offset_bottom = -20.888
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_fqvsl")
+theme_override_font_sizes/font_size = 32
+text = "Watch The Sea Water Decreased and Go To High Place"
+horizontal_alignment = 1
+autowrap_mode = 3
+clip_text = true
+
+[node name="Fix_characters" parent="." instance=ExtResource("4_m1qdy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.341, 0)

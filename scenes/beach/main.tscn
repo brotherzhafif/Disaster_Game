@@ -1,6 +1,7 @@
-[gd_scene load_steps=33 format=3 uid="uid://cujblkrvrif77"]
+[gd_scene load_steps=35 format=3 uid="uid://gbpd6q6ha1nw"]
 
-[ext_resource type="PackedScene" uid="uid://ck1exncbpw8fg" path="res://scenes/beach/metrial/terrain_bitch.glb" id="1_vlsq8"]
+[ext_resource type="PackedScene" uid="uid://ck1exncbpw8fg" path="res://scenes/Beach/metrial/terrain_bitch.glb" id="1_vlsq8"]
+[ext_resource type="Script" path="res://scenes/Beach/main.gd" id="2_tjrku"]
 [ext_resource type="Texture2D" uid="uid://upx1xvrix683" path="res://scenes/Forest/Material/farm_field_puresky_2k.hdr" id="3_ls4r2"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/scatter.gd" id="4_dxvd5"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="5_ysghk"]
@@ -14,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c8uhe3kh5ph5g" path="res://scenes/fix_characters.tscn" id="13_1hjd5"]
 [ext_resource type="PackedScene" uid="uid://xhsrdb700uow" path="res://scenes/Forest/river.tscn" id="13_4xlhg"]
 [ext_resource type="AudioStream" uid="uid://debjlg4q7cey4" path="res://Sound Effect/the-end-of-the-world-25685.mp3" id="14_me4ec"]
+[ext_resource type="PackedScene" uid="uid://0u2lnp43i7bb" path="res://scenes/Beach/tsunami_wave.tscn" id="16_yysh0"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ekkge"]
 panorama = ExtResource("3_ls4r2")
@@ -28,7 +30,7 @@ sky = SubResource("Sky_fkvty")
 ambient_light_sky_contribution = 0.5
 ambient_light_energy = 0.3
 
-[sub_resource type="Resource" id="Resource_33167"]
+[sub_resource type="Resource" id="Resource_ijlhu"]
 script = ExtResource("6_jp76b")
 amount = 1000
 enabled = true
@@ -37,7 +39,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_uqr12"]
+[sub_resource type="Resource" id="Resource_qngrj"]
 script = ExtResource("7_eq4cw")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(20, 360, 20)
@@ -48,7 +50,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_pdfqt"]
+[sub_resource type="Resource" id="Resource_wwnv2"]
 script = ExtResource("8_heh5i")
 iterations = 3
 offset_step = 0.2
@@ -60,7 +62,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_6orhg"]
+[sub_resource type="Resource" id="Resource_pt78w"]
 script = ExtResource("9_5gydk")
 ray_direction = Vector3(0, -1, 0)
 ray_length = 5.0
@@ -76,9 +78,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_hmyyd"]
+[sub_resource type="Resource" id="Resource_yywfi"]
 script = ExtResource("5_ysghk")
-stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_33167"), SubResource("Resource_uqr12"), SubResource("Resource_pdfqt"), SubResource("Resource_6orhg")])
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_ijlhu"), SubResource("Resource_qngrj"), SubResource("Resource_wwnv2"), SubResource("Resource_pt78w")])
 
 [sub_resource type="Resource" id="Resource_dbwml"]
 script = ExtResource("12_u8aqd")
@@ -92,7 +94,7 @@ size = Vector3(1, 1, 1)
 script = ExtResource("12_u8aqd")
 size = Vector3(1, 1, 1)
 
-[sub_resource type="Resource" id="Resource_qpt1s"]
+[sub_resource type="Resource" id="Resource_du3oi"]
 script = ExtResource("6_jp76b")
 amount = 75
 enabled = true
@@ -101,7 +103,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_oe4j1"]
+[sub_resource type="Resource" id="Resource_4o7ae"]
 script = ExtResource("7_eq4cw")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(20, 360, 20)
@@ -112,7 +114,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_kwe4c"]
+[sub_resource type="Resource" id="Resource_5tgi6"]
 script = ExtResource("8_heh5i")
 iterations = 3
 offset_step = 0.2
@@ -124,7 +126,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_i4xdn"]
+[sub_resource type="Resource" id="Resource_873rp"]
 script = ExtResource("9_5gydk")
 ray_direction = Vector3(0, -1, 0)
 ray_length = 5.0
@@ -140,9 +142,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_ktcy4"]
+[sub_resource type="Resource" id="Resource_l5v18"]
 script = ExtResource("5_ysghk")
-stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_qpt1s"), SubResource("Resource_oe4j1"), SubResource("Resource_kwe4c"), SubResource("Resource_i4xdn")])
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_du3oi"), SubResource("Resource_4o7ae"), SubResource("Resource_5tgi6"), SubResource("Resource_873rp")])
 
 [sub_resource type="Resource" id="Resource_fk050"]
 script = ExtResource("12_u8aqd")
@@ -153,6 +155,7 @@ script = ExtResource("12_u8aqd")
 size = Vector3(1, 1, 1)
 
 [node name="terrain_bitch" instance=ExtResource("1_vlsq8")]
+script = ExtResource("2_tjrku")
 
 [node name="Pantai" parent="." index="0"]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, -1.4, 0)
@@ -169,7 +172,7 @@ environment = SubResource("Environment_rkls2")
 [node name="ProtonScatter" type="Node3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.8035, -1.79541, 0)
 script = ExtResource("4_dxvd5")
-modifier_stack = SubResource("Resource_hmyyd")
+modifier_stack = SubResource("Resource_yywfi")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 
@@ -222,7 +225,7 @@ shape = SubResource("Resource_708id")
 [node name="ProtonScatter2" type="Node3D" parent="." index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.63083, 0)
 script = ExtResource("4_dxvd5")
-modifier_stack = SubResource("Resource_ktcy4")
+modifier_stack = SubResource("Resource_l5v18")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 
@@ -242,7 +245,7 @@ negative = true
 shape = SubResource("Resource_pki8b")
 
 [node name="river" parent="." index="4" instance=ExtResource("13_4xlhg")]
-transform = Transform3D(150, 0, 0, 0, 1, 0, 0, 0, 150, -5.72327, -5.69258, 26.6085)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.72327, -5.69258, 26.6085)
 
 [node name="Fix_characters" parent="." index="5" instance=ExtResource("13_1hjd5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.0408, 0)
@@ -278,3 +281,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.943221, -0.96175, -44.2975)
 stream = ExtResource("14_me4ec")
 autoplay = true
 max_distance = 50.0
+
+[node name="tsunami_wave" parent="." index="7" instance=ExtResource("16_yysh0")]
+transform = Transform3D(21.27, 0, 0, 0, 9.48307, 3.17354, 0, -3.17354, 9.48307, -5.835, -7.6, -194.293)
+visible = false
+
+[node name="Timer" type="Timer" parent="." index="8"]
+one_shot = true

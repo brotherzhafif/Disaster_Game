@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b10gmooycs0xo"]
+
+[ext_resource type="PackedScene" uid="uid://0qhm172q1cfl" path="res://asset/models/dissaster/batu_bangunan_hancur.glb" id="1_5npfa"]
+
+[node name="batu_bangunan_hancur" instance=ExtResource("1_5npfa")]

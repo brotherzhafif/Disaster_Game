@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bejajaf6qhny4"
-path.s3tc="res://.godot/imported/terrain_0.png-7b498bb5712815b514709740e6e0a8c0.s3tc.ctex"
+path.s3tc="res://.godot/imported/terrain_0.png-b0375ca351432f5b81a2b5e335d9f0f3.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://scenes/beach/metrial/terrain_0.png"
-dest_files=["res://.godot/imported/terrain_0.png-7b498bb5712815b514709740e6e0a8c0.s3tc.ctex"]
+source_file="res://scenes/Beach/metrial/terrain_0.png"
+dest_files=["res://.godot/imported/terrain_0.png-b0375ca351432f5b81a2b5e335d9f0f3.s3tc.ctex"]
 
 [params]
 
