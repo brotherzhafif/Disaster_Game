@@ -1,8 +1,12 @@
-# Normalize EOL for all files that Git considers text files.
+# Normalize EOL for all files that Git considers text files
 * text=auto eol=lf
-*.tcsn linguist-detectable=false
-*.glsl linguist-detectable=true
+
+# Disable linguist detection for all .gd files outside the scripts folder
 *.gd linguist-detectable=false
 
+# Enable linguist detection only for .gd files in the scripts directory
+scripts/*.gd linguist-detectable=true
 
-
+# Disable linguist detection for other non-script files
+*.tcsn linguist-detectable=false
+*.glsl linguist-detectable=false
